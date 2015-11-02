@@ -1,0 +1,36 @@
+{
+	"manifest_version": 2, 
+	"name": "Babel",
+	"description": "This extension allows a user to get recommendations through the Babel recommendation system for titles listed in Google Scholar searches",
+	"version": "1.0",
+
+	"page_action": {
+		"default_icon": "logo_icon.png",
+		"default_title": "Babel",
+		"default_popup": "popup.html"
+	},
+
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"https://scholar.google.com/*",
+		"http://scholar.google.com/*",
+		"https://babel-us-east-1.eigenfactor.org/*"
+	], 
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://scholar.google.com/scholar*"],
+			"js": ["spin.js", "swagger-client.js", "content.js"],
+			"css": ["ef_icon.css"]
+		}
+	],
+	
+	"web_accessible_resources": ["logo_icon.png", "spin.js", "swagger-client.js", "background.js"]
+
+}
