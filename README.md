@@ -5,7 +5,7 @@ Repository holds all scripts, images, and files used to create a Google Chrome e
 For more information visit: http://babel.eigenfactor.org/
 
 # How to use the extension
-
+--Chrome
 To use the Babel extension follow these instructions:
   1. download the repository to your local machine 
   2. Click Customize and Control Google Chrome to the right of the browsers address bar 
