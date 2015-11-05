@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "page_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Babel Extension Popup</title>
+    <style>
+      html {
+        background: url("background.png") no-repeat center center fixed;
+        -moz-background-size: contains;
+        background-size: cover;
+      }
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 75%;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #status {
+        border-bottom: solid white 1px; 
+
+      }
+      #content {
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="status">
+      <img src="logo_text.png" alt="BABEL.EIGENFACTOR.ORG" style="align">
+    </div>
+    <div>
+      <p id="content">Click this image in the google scholar search results to get recommendations powered by babel.eigenfactor.org</p>
+    </div>
+  </body>
+</html>
+
