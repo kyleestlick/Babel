@@ -1,6 +1,6 @@
 {
-  "title": "Babelfirefox",
-  "name": "babelfirefox",
+  "title": "Babel_firefox",
+  "name": "babel_firefox",
   "version": "0.0.1",
   "description": "An add-on to provide Babel recommendations to Google Scholar search results",
   "main": "index.js",
@@ -11,10 +11,10 @@
   },
   "license": "MPL-2.0",
   "keywords": [
-    "jetpack",
-    "Babel"
+    "jetpack"
   ],
   "permissions": {
-    "cross-domain-content": ["https://babel-us-east-1.eigenfactor.org/*", "https://babel-us-east-1.eigenfactor.org/swagger.json*"]
+    "cross-domain-content": ["https://babel-us-east-1.eigenfactor.org/*", "https://babel-us-east-1.eigenfactor.org/swagger.json*"],
+    "private-browsing": "True"
   }
 }
