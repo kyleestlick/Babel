@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2, 
+	"name": "Babel_Widget",
+	"description": "This extension allows a user to get recommendations through the Babel recommendation system for titles listed in Google Scholar searches",
+	"version": "1.0",
+
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"http://www.plosone.org/article/related/*",
+		"http://babel-us-east-1.eigenfactor.org/*"
+	], 
+
+
+	"content_scripts": [
+		{
+			"matches": ["http://www.plosone.org/article/related/*"],
+			"js": ["swagger-client.js", "content.js"],
+			"css": ["Babel_Widget.css"]
+		}
+	],
+	
+	"web_accessible_resources": ["logo.png", "swagger-client.js", "background.js"]
+
+}

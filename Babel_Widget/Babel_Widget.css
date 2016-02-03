@@ -1,0 +1,74 @@
+#recommendation_div {
+	height: auto;
+	width: 100%;
+	border:solid 1px black;
+	background-color:gray;
+	padding:0;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+#babel_header {
+	padding:0;
+	margin:0;
+	width:100%;
+	height:50px;
+	background-color:#202020;
+	line-height: 50px;
+	text-align: middle;
+	font-size: 14pt;
+	color:#A0A0A0;
+
+}
+
+#babel_logo {
+	float:left;
+	position:relative;
+	height:40px;
+	padding: 0 10px 0 10px;
+	border:solid 1px orange;
+}
+
+#babel_rec_div {
+	padding:0;
+	margin:0;
+	border:solid 1px green;
+	height:auto;
+	width:100%;
+}
+
+#babel_rec_count {
+	/*float:left;*/
+	border:solid 1px red;
+	display:inline-block;
+}
+
+#babel_rec_publisher {
+	border:solid 1px #66FF66;
+	display:inline-block
+}
+
+#babel_rec_title {
+	border:solid 1px yellow;
+	display:inline-block
+}
+
+#babel_rec_authors {
+	border:solid 1px blue;
+	display:inline-block
+}
+
+#babel_rec_date {
+	border:solid 1px white;
+	display:inline-block
+}
+
+#babel_rec_label {
+	border:solid 1px purple;
+	display:inline-block
+}
+
+/*#one_rec_div:nth-child(odd) {
+	background-color: orange;
+}8?
+
