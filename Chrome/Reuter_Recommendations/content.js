@@ -1,4 +1,3 @@
-
 (function(){
 	var recsDiv = document.createElement("div");
 	recsDiv.setAttribute("id", "recommendation_div");
@@ -46,7 +45,7 @@ function get_recs(paper_id) {
 		}
 	}
 	xmlHttp.open("GET", url, true);
-	xmlHttp.setRequestHeader("Authorization","Basic " + btoa("USERNAME"+":"+"PASSWORD"));
+	xmlHttp.setRequestHeader("Authorization","Basic " + btoa(auth.username+":"+auth.pw));
     xmlHttp.send();
 };
 
@@ -113,7 +112,6 @@ function no_recs() {
 	target = document.getElementById("recommendation_div");
 	target.appendChild(newDiv);
 }
-
 
 
 
