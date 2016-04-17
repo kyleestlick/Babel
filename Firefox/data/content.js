@@ -65,7 +65,6 @@ function checkTitle(titles) {
 	//ALERTING THE USER AND ERROR HAS OCCURED 
 	
 	}).catch(function(error) {
-		console.log(error);
 		if(TRYS < 2) {
 			TRYS += 1;
 			console.log('try number ', TRYS);

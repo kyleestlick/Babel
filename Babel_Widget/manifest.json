@@ -7,14 +7,14 @@
 	"permissions": [
 		"activeTab",
 		"tabs",
-		"http://www.plosone.org/article/related/*",
+		"http://journals.plos.org/plosone/article/related*",
 		"http://babel-us-east-1.eigenfactor.org/*"
 	], 
 
 
 	"content_scripts": [
 		{
-			"matches": ["http://www.plosone.org/article/related/*"],
+			"matches": ["http://journals.plos.org/plosone/article/related*"],
 			"js": ["swagger-client.js", "content.js"],
 			"css": ["Babel_Widget.css"]
 		}

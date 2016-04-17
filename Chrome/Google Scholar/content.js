@@ -41,6 +41,8 @@ var TRYS = 0;
 		var name = SEARCH_RESULT[i].innerText;
 		formatted_names.push(name.replace(regex_brackets, ""));
 	}
+	//DELETE
+	console.log(formatted_names);
 	checkTitle(formatted_names);
 })();
 
@@ -87,6 +89,8 @@ function createIcon(response) {
 	//FOR EACH RESPONSE GIVEN BY THE BULK FIND REQUEST SEE IF THE RECS ELEMENT IS TRUE 
 	//INDICATING THAT BABEL HAS RECOMMENDATIONS FOR THAT TITLE
 	for (i = 0; i < response.length; i++) {
+		//DELETE
+		console.log(response[i]);
 		if(response[i].recs == true) {
 
 			//IF RECOMMENDATIONS ARE FOUND, CREATE THE NECESSARY HTML ELEMENTS TO INSERT
