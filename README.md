@@ -6,7 +6,7 @@ For more information visit: http://babel.eigenfactor.org/
 
 # How to use the extension
 ### Chrome 
-To use the Babel extension on chrome follow these instructions:
+To use the Babel extensions on chrome (Google Scholars & Reuter_Recommendations) follow these instructions:
   1. download the repository to your local machine 
   2. Click Customize and Control Google Chrome to the right of the browsers address bar 
   3. Select "More Tools" then "Extensions"
