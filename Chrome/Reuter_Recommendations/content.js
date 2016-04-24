@@ -23,24 +23,25 @@
 	for (i=0; i < search_dom.length; i++) {
 		value = search_dom[i].getElementsByTagName("value")[0];
 		if (value !== undefined && value.innerHTML.substring(0, 4) == 'WOS:') {
-			get_recs(value.innerHTML);
+			get_recs(value.innerHTML, "ef_expert");
+			get_recs(value.innerHTML, "ef_classic")
 			/*get_recs('WOS:000003907500002.11') <-- USE THIS TO TEST*/ 
 		};
 	}
 })();
 
 
-function get_recs(paper_id) {
+function get_recs(paper_id, type) {
 	id = encodeURIComponent(paper_id)
 	publisher = 'wos/'
-	url = 'http://52.73.252.5/recommendation/' + publisher + id + '?limit=5'
+	url = 'http://52.73.252.5/recommendation/' + publisher + id + '?limit=5&algorithm=' + type
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function() {
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 			if ((JSON.parse(xmlHttp.responseText).results) == undefined) {
 				no_recs();
 			} else {
-				get_metaData(JSON.parse(xmlHttp.responseText).results);	
+				get_metaData(JSON.parse(xmlHttp.responseText).results, type);	
 			}
 		}
 	}
@@ -50,7 +51,14 @@ function get_recs(paper_id) {
 };
 
 
-function get_metaData(recs) {
+function get_metaData(recs, type) {
+	var rec_type = document.createElement("div");
+	rec_type.setAttribute("id", "babel_rec_type");
+	rec_type.innerHTML = type.substring(3) + ' recommendations';
+
+	target = document.getElementById("recommendation_div");
+	target.appendChild(rec_type);
+
 	for (i=0; i<recs.length; i++) {
 		id = encodeURIComponent(recs[i].paper_id)
 		url = 'http://52.73.252.5/metadata/'+recs[i].publisher+'/'+id
@@ -72,6 +80,7 @@ function get_metaData(recs) {
 
 
 function build_rec_div(metadata) {
+
 	metadata = JSON.parse(metadata);
 
 	var newDiv = document.createElement("div");

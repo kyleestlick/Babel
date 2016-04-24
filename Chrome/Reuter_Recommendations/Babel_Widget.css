@@ -3,7 +3,6 @@
 	height: auto;
 	width: 100%;
 	padding:0;
-	border-bottom: 1px solid #bdbdbd;
 	margin-left:auto;
 	margin-right: auto;
 }
@@ -27,16 +26,24 @@
 	padding: 0 10px 0 10px;
 }
 
+#babel_rec_type {
+	font-size: 12pt;
+	width: 100%;
+	background-color: #D3D3D3;
+	padding: 5px 0px;
+}
+
 #babel_rec_div {
 	padding:15px 0px;
 	margin:0;
 	height:auto;
 	width:100%;
+	border-bottom: 1px solid #bdbdbd;
 }
 
-#babel_rec_div:nth-child(even) {
+/*#babel_rec_div:nth-child(even) {
 	background-color: #D3D3D3;
-}
+}*/
 
 #babel_rec_item {
 	padding: 1px 0px;
@@ -49,4 +56,5 @@
 	width: 100%;
 	text-align: center;
 	font-size: 11pt;
+	border-bottom: 1px solid #bdbdbd;
 }

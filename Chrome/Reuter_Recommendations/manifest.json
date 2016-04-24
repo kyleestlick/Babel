@@ -7,14 +7,15 @@
 	"permissions": [
 		"activeTab",
 		"tabs",
-		"http://apps.webofknowledge.com.offcampus.lib.washington.edu/*",
+		"http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
+		"http://apps.webofknowledge.com/full_record.do?*",
 		"http://52.73.252.5/*"
 	], 
 
 
 	"content_scripts": [
 		{
-			"matches": ["http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*"],
+			"matches": ["http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*", "http://apps.webofknowledge.com/full_record.do?*"],
 			"js": ["config.js", "content.js"],
 			"css": ["Babel_Widget.css"]
 		}
