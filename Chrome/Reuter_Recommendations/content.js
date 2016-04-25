@@ -39,7 +39,7 @@ function get_recs(paper_id, type) {
 	xmlHttp.onreadystatechange = function() {
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 			if ((JSON.parse(xmlHttp.responseText).results) == undefined) {
-				no_recs();
+				no_recs(type);
 			} else {
 				get_metaData(JSON.parse(xmlHttp.responseText).results, type);	
 			}
@@ -112,13 +112,18 @@ function build_rec_div(metadata) {
 	target.appendChild(newDiv);
 }
 
-function no_recs() {
+function no_recs(type) {
+	var rec_type = document.createElement("div");
+	rec_type.setAttribute("id", "babel_rec_type");
+	rec_type.innerHTML = type.substring(3) + ' recommendations';
+
+
 	var newDiv = document.createElement("div");
 	newDiv.setAttribute("id", "no_recs");
-
 	newDiv.innerHTML = "No Recommendations Found";
 
 	target = document.getElementById("recommendation_div");
+	target.appendChild(rec_type);
 	target.appendChild(newDiv);
 }
 
