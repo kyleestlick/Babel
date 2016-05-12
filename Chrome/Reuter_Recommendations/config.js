@@ -1,1 +1,1 @@
-var auth = {"username": "thompson","pw": "ef16tr"}
+var auth = {"username": "","pw": ""}
