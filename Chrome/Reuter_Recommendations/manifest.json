@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2, 
+	"manifest_version": 2,
 	"name": "Reuters_Recommendations",
 	"description": "This extension allows a user to get recommendations through the Babel recommendation system on Reuters' Web of Science site",
 	"version": "1.0",
@@ -9,19 +9,24 @@
 		"tabs",
 		"http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
 		"http://apps.webofknowledge.com/full_record.do?*",
-		"http://52.73.252.5/*"
-	], 
+		"http://52.73.252.5/*",
+		"storage"
+	],
 
 
 	"content_scripts": [
 		{
-			"matches": ["http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*", "http://apps.webofknowledge.com/full_record.do?*"],
+			"matches": [
+				"http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
+				"http://apps.webofknowledge.com/full_record.do?*"
+			],
 			"js": ["config.js", "content.js"],
 			"css": ["Babel_Widget.css"]
 		}
 	],
-	
+
+	"options_page": "options.html",
+
 	"web_accessible_resources": ["logo.png"]
 
 }
-
