@@ -1,4 +1,9 @@
 var config = {endpoint : "tr.eigenfactor.org"};
+var RECTYPE_LOOKUP = {
+	ef_expert: "Expert Recommendations",
+	ef_classic: "Classic Recommendations"
+};
+
 (function(){
   chrome.storage.local.get("auth", function(conf) {
 		config.auth = conf.auth;
@@ -13,7 +18,7 @@ var config = {endpoint : "tr.eigenfactor.org"};
 
 	var header = document.createElement("div");
 	header.setAttribute("id", "babel_header");
-	header.innerHTML = 'BABEL RECOMMENDATIONS';
+	header.innerHTML = 'Eigenfactor Recommends';
 
 	var logo = document.createElement("img");
 	logo.setAttribute("id", "babel_logo");
@@ -58,7 +63,7 @@ function get_recs(paper_id, type) {
 function get_metaData(recs, type) {
 	var rec_type = document.createElement("div");
 	rec_type.setAttribute("id", "babel_rec_type");
-	rec_type.innerHTML = type.substring(3) + ' recommendations';
+	rec_type.innerHTML = RECTYPE_LOOKUP[type];
 
 	target = document.getElementById("recommendation_div");
 	target.appendChild(rec_type);
@@ -90,10 +95,6 @@ function build_rec_div(metadata) {
 	var newDiv = document.createElement("div");
 	newDiv.setAttribute("id", "babel_rec_div");
 
-	var publisher = document.createElement("div");
-	publisher.setAttribute("id", "babel_rec_item");
-	publisher.innerHTML = "<span style='font-weight:bold'>PUBLISHER:</span> " + metadata.publisher;
-
 	var title = document.createElement("div");
 	title.setAttribute("id","babel_rec_item");
 	title.innerHTML = "<span style='font-weight:bold'>TITLE:</span> " + metadata.title;
@@ -101,13 +102,12 @@ function build_rec_div(metadata) {
 	var authors = document.createElement("div");
 	authors.setAttribute("id","babel_rec_item");
 	var auth_list = JSON.stringify(metadata.authors);
-	authors.innerHTML = "<span style='font-weight:bold'>AUTHORS:</span> " + auth_list.substring(2, (auth_list.length - 2));
+	authors.innerHTML = "<span style='font-weight:bold'>AUTHOR:</span> " + auth_list.substring(2, (auth_list.length - 2));
 
 	var date = document.createElement("div");
 	date.setAttribute("id","babel_rec_item");
-	date.innerHTML = "<span style='font-weight:bold'>DATE:</span> " + metadata.date.substring(0,10);
+	date.innerHTML = "<span style='font-weight:bold'>DATE:</span> " + metadata.date.substring(0,4);
 
-	newDiv.appendChild(publisher);
 	newDiv.appendChild(title);
 	newDiv.appendChild(authors);
 	newDiv.appendChild(date);
@@ -119,7 +119,7 @@ function build_rec_div(metadata) {
 function no_recs(type) {
 	var rec_type = document.createElement("div");
 	rec_type.setAttribute("id", "babel_rec_type");
-	rec_type.innerHTML = type.substring(3) + ' recommendations';
+	rec_type.innerHTML = RECTYPE_LOOKUP[type];
 
 
 	var newDiv = document.createElement("div");
