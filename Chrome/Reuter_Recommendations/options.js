@@ -5,7 +5,7 @@ function save_options() {
   chrome.storage.local.set({
     auth: {
       username: username,
-      pw: password
+      password: password
     }
   }, function() {
     // Update status to let user know options were saved.
@@ -22,7 +22,7 @@ function restore_options() {
     auth: { username: null, pw: null}
   }, function(conf) {
     document.getElementById('username').value = conf.auth.username;
-    document.getElementById('password').value = conf.auth.pw;
+    document.getElementById('password').value = conf.auth.password;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
