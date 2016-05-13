@@ -12,7 +12,7 @@ To use the Babel extensions on chrome (Google Scholars & Reuter_Recommendations)
   3. Select "More Tools" then "Extensions"
   4. Select "Developer Mode" then click "Load unpacked extension..."
   5. Navigate to the repository you downloaded to your local machine, select the Chrome folder and click "OK"
-  6. Test it out!
+  6. If you are using the Reuter_Recommendations plugin right click on the "R" icon in your task bar, select options and enter the credentials you were given.
   
 ### Firefox
 To use the Babel extension on firefox follow these instruction:
