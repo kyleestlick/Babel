@@ -2,7 +2,7 @@
 function save_options() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  chrome.storage.sync.set({
+  chrome.storage.local.set({
     auth: {
       username: username,
       pw: password
@@ -17,11 +17,8 @@ function save_options() {
   });
 }
 
-// Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
 function restore_options() {
-  // Use default value color = 'red' and likesColor = true.
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     auth: { username: null, pw: null}
   }, function(conf) {
     document.getElementById('username').value = conf.auth.username;
