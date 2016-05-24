@@ -19,7 +19,7 @@
 		{
 			"matches": [
 				"http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
-				"http://apps.webofknowledge.com/full_record.do?*"
+				"http://apps.webofknowledge.com/full_record.do?*",
 				"https://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
 				"https://apps.webofknowledge.com/full_record.do?*"
 			],
