@@ -1,6 +1,7 @@
 {
 	"manifest_version": 2,
-	"name": "WoS Eigenfactor Recommendations",
+	"name": "Web of Science Eigenfactor Recommendations",
+	"short_name": "WoS Eigenfactor Recommends",
 	"description": "This extension allows a user to get recommendations through the Babel recommendation system on Reuters' Web of Science site",
 	"version": "1.1",
 
