@@ -9,6 +9,8 @@
 		"tabs",
 		"http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
 		"http://apps.webofknowledge.com/full_record.do?*",
+		"https://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
+		"https://apps.webofknowledge.com/full_record.do?*",
 		"http://52.73.252.5/*",
 		"storage"
 	],
@@ -18,6 +20,8 @@
 			"matches": [
 				"http://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
 				"http://apps.webofknowledge.com/full_record.do?*"
+				"https://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
+				"https://apps.webofknowledge.com/full_record.do?*"
 			],
 			"js": ["content.js"],
 			"css": ["Babel_Widget.css"]
