@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"name": "Reuters_Recommendations",
+	"name": "WoS Eigenfactor Recommendations",
 	"description": "This extension allows a user to get recommendations through the Babel recommendation system on Reuters' Web of Science site",
 	"version": "1.1",
 
@@ -11,9 +11,11 @@
 		"http://apps.webofknowledge.com/full_record.do?*",
 		"https://apps.webofknowledge.com.offcampus.lib.washington.edu/full_record.do?*",
 		"https://apps.webofknowledge.com/full_record.do?*",
-		"http://52.73.252.5/*",
 		"storage"
 	],
+	"icons" : {
+		"64" : "logo_icon.png"
+	},
 
 	"content_scripts": [
 		{
@@ -30,7 +32,7 @@
 
 	"options_ui": {
 		"page": "options.html",
-		"chrome_style": true 
+		"chrome_style": true
 	},
 
 	"web_accessible_resources": ["logo.png"]

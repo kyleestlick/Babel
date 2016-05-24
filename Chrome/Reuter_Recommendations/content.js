@@ -17,8 +17,8 @@ var RECTYPE_LOOKUP = {
 	target.appendChild(recsDiv);
 
 	var header = document.createElement("div");
-	header.setAttribute("id", "babel_header");
-	header.innerHTML = 'Eigenfactor Recommends';
+	header.setAttribute("class", "title2");
+	header.innerHTML = '<span style="font-size: 16px;">Eigenfactor Recommends</span>';
 
 	var logo = document.createElement("img");
 	logo.setAttribute("id", "babel_logo");
@@ -43,7 +43,7 @@ function search() {
 function get_recs(paper_id, type) {
 	id = encodeURIComponent(paper_id);
 	publisher = 'wos/';
-	url = 'http://' + config.endpoint + '/recommendation/' + publisher + id + '?limit=5&algorithm=' + type;
+	url = 'https://' + config.endpoint + '/recommendation/' + publisher + id + '?limit=5&algorithm=' + type;
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function() {
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
@@ -63,14 +63,14 @@ function get_recs(paper_id, type) {
 function get_metaData(recs, type) {
 	var rec_type = document.createElement("div");
 	rec_type.setAttribute("id", "babel_rec_type");
-	rec_type.innerHTML = RECTYPE_LOOKUP[type];
+	rec_type.innerHTML = "<span style=\"padding-left: 12px;\">"+RECTYPE_LOOKUP[type]+"</span>";
 
 	target = document.getElementById("recommendation_div");
 	target.appendChild(rec_type);
 
 	for (i=0; i<recs.length; i++) {
 		id = encodeURIComponent(recs[i].paper_id);
-		url = 'http://'+config.endpoint+'/metadata/'+recs[i].publisher+'/'+id;
+		url = 'https://'+config.endpoint+'/metadata/'+recs[i].publisher+'/'+id;
 		var xmlHttp = new XMLHttpRequest();
 		xmlHttp.onreadystatechange = function() {
 			if (xmlHttp.readyState == 4) {
@@ -93,24 +93,14 @@ function build_rec_div(metadata) {
 	metadata = JSON.parse(metadata);
 
 	var newDiv = document.createElement("div");
-	newDiv.setAttribute("id", "babel_rec_div");
+	newDiv.setAttribute("class", "block-text");
 
-	var title = document.createElement("div");
-	title.setAttribute("id","babel_rec_item");
-	title.innerHTML = "<span style='font-weight:bold'>TITLE:</span> " + metadata.title;
-
-	var authors = document.createElement("div");
-	authors.setAttribute("id","babel_rec_item");
+	var entry = document.createElement("p");
+	entry.setAttribute("class", "NEWFRside_rec");
 	var auth_list = JSON.stringify(metadata.authors);
-	authors.innerHTML = "<span style='font-weight:bold'>AUTHOR:</span> " + auth_list.substring(2, (auth_list.length - 2));
+	entry.innerHTML = auth_list.substring(2, (auth_list.length - 2)) + ". " + metadata.title + ". " + metadata.date.substring(0,4);
 
-	var date = document.createElement("div");
-	date.setAttribute("id","babel_rec_item");
-	date.innerHTML = "<span style='font-weight:bold'>DATE:</span> " + metadata.date.substring(0,4);
-
-	newDiv.appendChild(title);
-	newDiv.appendChild(authors);
-	newDiv.appendChild(date);
+	newDiv.appendChild(entry);
 
 	target = document.getElementById("recommendation_div");
 	target.appendChild(newDiv);
