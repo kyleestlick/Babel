@@ -18,7 +18,7 @@ var RECTYPE_LOOKUP = {
 
 	var header = document.createElement("div");
 	header.setAttribute("class", "title2");
-	header.innerHTML = '<span style="font-size: 16px;">Eigenfactor Recommends</span>';
+	header.innerHTML = '<span style="font-size: 16px;"><a href="http://www.eigenfactor.org">Eigenfactor Recommends</a></span>';
 
 	var logo = document.createElement("img");
 	logo.setAttribute("id", "babel_logo");
@@ -26,6 +26,7 @@ var RECTYPE_LOOKUP = {
 
 	recsDiv.appendChild(logo);
 	recsDiv.appendChild(header);
+
 })();
 
 function search() {
