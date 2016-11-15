@@ -30,12 +30,12 @@ var RECTYPE_LOOKUP = {
 
 function search() {
 	search_dom = document.getElementsByClassName("FR_field");
-	for (i=0; i < search_dom.length; i++) {
-		value = search_dom[i].getElementsByTagName("value")[0];
-		if (value !== undefined && value.innerHTML.substring(0, 4) == 'WOS:') {
-			get_recs(value.innerHTML, "ef_expert", config);
-			get_recs(value.innerHTML, "ef_classic", config);
-			/*get_recs('WOS:000003907500002.11') <-- USE THIS TO TEST*/
+	for (i = 0; i < search_dom.length; i++) {
+		if (search_dom[i].innerText.startsWith("Accession Number: WOS:")) {
+			UT = "WOS:" + search_dom[i].innerText.split(':')[2]
+			get_recs(UT, "ef_expert", config);
+			get_recs(UT, "ef_classic", config);
+			break;
 		}
 	}
 }
@@ -87,6 +87,14 @@ function get_metaData(recs, type) {
 	}
 }
 
+function build_title_link(metadata) {
+	UT = metadata.paper_id.split(':')[1];
+	url = "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcApp=EigenfactorRecommends&SrcAuth=TRINTCEL&KeyUT="+UT+"&DestLinkType=FullRecord&DestApp=WOS_CPL";
+	elem = document.createElement("a");
+	elem.innerText = metadata.title;
+	elem.href = url;
+	return elem;
+}
 
 function build_rec_div(metadata) {
 
@@ -98,7 +106,9 @@ function build_rec_div(metadata) {
 	var entry = document.createElement("p");
 	entry.setAttribute("class", "NEWFRside_rec");
 	var auth_list = JSON.stringify(metadata.authors);
-	entry.innerHTML = auth_list.substring(2, (auth_list.length - 2)) + ". " + metadata.title + ". " + metadata.date.substring(0,4);
+	entry.innerHTML = auth_list.substring(2, (auth_list.length - 2)) + ". " 
+	entry.insertAdjacentElement('beforeend', build_title_link(metadata))
+	entry.insertAdjacentText('beforeend', ". " + metadata.date.substring(0,4))
 
 	newDiv.appendChild(entry);
 
