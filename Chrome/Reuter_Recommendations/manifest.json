@@ -3,7 +3,7 @@
 	"name": "Web of Science Eigenfactor Recommendations",
 	"short_name": "WoS Eigenfactor Recommends",
 	"description": "This extension allows a user to get recommendations through the Babel recommendation system for Web of Science",
-	"version": "1.3",
+	"version": "1.4",
 
 	"permissions": [
 		"activeTab",
