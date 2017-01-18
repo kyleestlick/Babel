@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+	"name": "Babel Scholarly Article Recommendation Plugin",
+	"short_name": "Babel Recommends",
+	"description": "This extension allows a user to get recommendations through the Babel recommendation system for arXiv",
+	"version": "1.0",
+
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"http://arxiv.org/abs/*",
+		"https://arxiv.org/abs/*",
+		"storage"
+	],
+	"icons" : {
+		"64" : "logo_icon.png"
+	},
+
+	"content_scripts": [
+		{
+			"matches": [
+				"http://arxiv.org/abs/*",
+				"https://arxiv.org/abs/*"
+			],
+			"js": ["content.js"],
+			"css": ["Babel_Widget.css"]
+		}
+	],
+
+	"web_accessible_resources": ["logo.png"]
+
+}
