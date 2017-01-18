@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Babel Scholarly Article Recommendation Plugin",
 	"short_name": "Babel Recommends",
-	"description": "This extension allows a user to get recommendations through the Babel recommendation system for arXiv",
+	"description": "This extension allows a user to get recommendations from Babel, the scholarly article recommendation engine.",
 	"version": "1.0",
 
 	"permissions": [
