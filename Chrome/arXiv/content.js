@@ -109,8 +109,13 @@ function build_rec_div(metadata) {
 	var entry = document.createElement("p");
 	entry.setAttribute("class", "NEWFRside_rec");
 	entry.insertAdjacentElement('beforeend', build_title_link(metadata))
-	entry.insertAdjacentText('beforeend', " " + metadata.authors[0].trim())
-	entry.insertAdjacentText('beforeend', ". " + metadata.date.substring(0,4))
+	if (metadata.authors) {
+		entry.insertAdjacentText('beforeend', " " + metadata.authors[0].trim())
+	}
+
+	if (metadata.date){
+		entry.insertAdjacentText('beforeend', ". " + metadata.date.substring(0,4))
+	}
 
 	newDiv.appendChild(entry);
 
